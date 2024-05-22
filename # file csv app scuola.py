@@ -1,7 +1,7 @@
 # file csv app scuola 
 
 import csv
-
+ProfDictionary={}
 
 
 fileIn=open("C:\\Users\\giacomopoldi\\Desktop\\prova.csv", "r", encoding="utf-8")
@@ -12,22 +12,9 @@ for prova in reader:
     dati.append(prova)
 fileIn.close()
 
-print("\nPrimo Prof")
-print(dati[0]["Nome"])
-print(dati[0]["Cognome"])
-print(dati[0]["ClasseProf"])
-
-print("\nSecondo Prof")
-print(dati[1]["Nome"])
-print(dati[1]["Cognome"])
-print(dati[1]["ClasseProf"])
 
 
-print("\nTerzo Prof")
-print(dati[2]["Nome"])
-print(dati[2]["Cognome"])
-print(dati[2]["ClasseProf"])
-
-
+ProfDictionary['Professori'] = dati
+print(ProfDictionary)
 
 
