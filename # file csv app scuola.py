@@ -14,16 +14,17 @@ for prova in reader:
     dati.append(prova)
 fileIn.close()
 
-profDictionary['Professori'] = dati
-print(profDictionary)
 
-field_names = ['Nome', 'Cognome', 'ClasseProf']
-newProf = {'Nome': 'Samuele', 'Cognome': 'Maranghi', 'ClasseProf': '4I1'}
+print(dati)
 
-with open('prova.csv', 'a') as f_object:
-    dictwriter_oggetto = DictWriter(f_object, fieldnames=field_names)
-    dictwriter_oggetto.writerow(newProf)
-    f_object.close()
+new_prof={'Nome': 'Samuele', 'Cognome': 'Maranghi', 'ClasseProf': '3I1'}
+dati.append(new_prof)
+print(dati)
 
-print("")
-print(profDictionary)
+with open("C:\\Users\\giacomopoldi\\Desktop\\prof_nuovo.csv","w") as fw:
+    #scorre il dizionario
+    for element in dati:
+        fw.write(element["Nome"]+ " , ")
+        fw.write(element["Cognome"]+ " , ")
+        fw.write(element["ClasseProf"]+ " , "+ "\n")
+        print(element)
